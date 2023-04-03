@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Магазин</title>
+</head>
+<body>
+
+    <!-- main section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-5">
+
+                <!-- Меню для поиска товаров -->
+                <div class="goods_box" id="goods">
+                    <div class="menu text-center">
+                        <input type="text" placeholder="Поиск" class="search">
+                        <button class="btn btn-success mb-1"  data-bs-toggle="modal" data-bs-target="#exampleModal">&#10010</button>
+                    </div>
+    
+                    <!-- Таблица товаров -->
+                    <div class="table-responsive style="margin-bottom: 100px!important;">
+                        <table class="goods table  mt-4"  id="table1">
+                            <thead>
+                                <tr class="table-success align-middle">
+                                    <th data-type="number">N</th>
+                                    <th data-type="string">Название</th>
+                                    <th data-type="number">Цена, &#8381</th>
+                                    <th data-type="number">Количество</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="list">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Корзина товаров -->
+            <div class="col-xxl-7">
+                <div class="price_box">
+                    <h1 class="text-center align-middle price_title">Итого: <span class="price_result"></span></h1>
+                </div>
+
+                <div class="table-responsive my-3">
+                    <table class="table price" id="table2">
+                        <thead>
+                            <tr class="table-success align-middle">
+                                <th data-type="number">N</th>
+                                <th data-type="string">Название</th>
+                                <th data-type="number">Цена/ш, &#8381</th>
+                                <th data-type="number">Количество</th>
+                                <th class="sale">Скидка, %</th>
+                                <th data-type="number">Цена, &#8381</th>
+                                <th data-type="number"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cart">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal section -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Добавить товара</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="good_name" class="form-label">Название товара: </label>
+                <input type="text" id="good_name" class="form-control mb-3" maxlength="40">
+
+                <label for="good_price" class="form-label">Цена товара: </label>
+                <input type="text" id="good_price" class="form-control mb-3">
+
+                <label for="good_count" class="form-label">Количество товара: </label>
+                <input type="text" id="good_count" class="form-control mb-3" min="1" value="1">
+
+                <button class="add_new btn btn-success form-control mt-2">Сохранить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- end main section -->
+    
+    <!-- JS section -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/sweetalert2.all.min.js"></script>
+    <script src="./js/list.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
